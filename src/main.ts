@@ -9,6 +9,7 @@ import firebaseConfig from "./helpers/firebaseConfig"
 import App from './App.vue'
 import router from './router'
 import { browserLocalPersistence, getAuth, setPersistence } from 'firebase/auth'
+import '@/styles/main.css'
 
 const app = createApp(App)
 
@@ -28,7 +29,6 @@ app
   })
   .use(createPinia())
 
-  
 setPersistence(getAuth(), browserLocalPersistence)
 
 app.use(router)

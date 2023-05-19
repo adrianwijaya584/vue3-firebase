@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!isLoading">
+  <TheCard v-if="!isLoading">
     <button v-if="!isLogin" @click.stop="login">Login</button>
 
     <div v-if="isLogin">
@@ -12,7 +12,7 @@
     <div v-else>
       <h3>Please Login to continue</h3>
     </div>
-  </div>
+  </TheCard>
 
   <div v-else>
     <p>Loading...</p>
@@ -24,6 +24,7 @@
   import { computed, onMounted, ref, shallowRef } from 'vue';
   import { getCurrentUser} from 'vuefire';
   import { googleOneTap } from 'vue3-google-login'
+import { TheCard } from 'flowbite-vue';
 
   const provider= new GoogleAuthProvider()
   const isLogin= ref(false)

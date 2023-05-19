@@ -3,6 +3,11 @@ import { getCurrentUser } from 'vuefire';
 
 const routes: RouteRecordRaw[]=  [
   {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: ()=> import('@/views/NotFound.vue')
+  },
+  {
     path: '/',
     name: 'home',
     component: ()=> import("./../views/HomeView.vue")

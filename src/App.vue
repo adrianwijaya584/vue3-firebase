@@ -1,19 +1,21 @@
 <template>
-  <div class="">
+  <div class="p-4">
     <!-- <p>{{ Fcmtoken }}</p> -->
     <img :src="notificationImage" alt="">
-    <RouterView />
+    <ToastProvider transition="slide-left">
+      <RouterView />
+    </ToastProvider>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { RouterView, useRouter } from 'vue-router'
-  import { onMounted, ref } from 'vue';
+  import {RouterView} from 'vue-router'
+  import {onMounted,ref} from 'vue';
   import * as messaging from "firebase/messaging"
+import { ToastProvider } from 'flowbite-vue';
 
   const Fcmtoken= ref("")
   const notificationImage= ref("")
-  const router= useRouter()
 
   onMounted(async ()=> {
    try {

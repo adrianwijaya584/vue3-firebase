@@ -5,9 +5,9 @@
     <img :src="authStore.userData.photoURL || ''" alt="">
     <p>{{ authStore.userData?.displayName }}</p>
 
-    <form @submit.prevent="">
-      <input type="text" v-model="formData.name">
-      <input type="text" v-model="formData.age">
+    <form  class="space-x-3" @submit.prevent="">
+      <input class="border-2" type="text" v-model="formData.name">
+      <input class="border-2" type="text" v-model="formData.age">
     </form>
 
     <p>Hello I'm {{ formData.name }} and I {{ formData.age }} y.o.</p>
