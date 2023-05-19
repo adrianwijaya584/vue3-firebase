@@ -16,12 +16,23 @@
     </form>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <TheCard href="#" variant="default" v-for="(v, k) in cats" :key="k" class="min-w-full">
+      <TheCard v-if="cats.length" href="#" variant="default" v-for="(v, k) in cats" :key="v.id" class="min-w-full">
         <div class="flex flex-col space-y-3">
           <h1 class="font-bold text-2xl">{{v.name}}</h1>
           <p class="line-clamp-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo doloribus nulla nesciunt est pariatur distinctio id ipsum? Officiis doloribus pariatur nostrum magnam, adipisci ea harum quo unde reiciendis! Omnis, amet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nobis rem fugit est consequuntur consectetur provident porro soluta nulla iusto exercitationem rerum, eligendi minus doloribus eveniet, esse illo eaque nostrum.</p>
           <Button color="red" @click.stop="openDeleteModal(v.id)">Hapus</Button>
         </div> 
+      </TheCard>
+
+      <TheCard v-else-if="!cats.length" v-for="_, k in 3" :key="k" class="min-w-full">
+        <div class="flex flex-col space-y-3 animate-pulse">
+          <div class="h-4 bg-gray-200 rounded-full dark:bg-gray-700 w-48"></div>
+          <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+          <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+          <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+          <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+          <div class="h-8 bg-gray-200 rounded-lg dark:bg-gray-700 w-full"></div>
+        </div>
       </TheCard>
     </div>
 
@@ -65,7 +76,6 @@ import { useRouter } from 'vue-router';
   const counterStore= useCounterStore()
   const router= useRouter()
   const toast= useToast()
-
 
   const catName= shallowRef("")
   const cats= ref<Cats[]>([])
@@ -156,8 +166,9 @@ import { useRouter } from 'vue-router';
 
   onMounted(()=> {
     oneTapSignin()
-    getCats()
-    console.log(useCurrentUser().value);
+    setTimeout(()=> {
+      getCats()
+    }, 3000)
   })
 
   onBeforeMount(()=> {

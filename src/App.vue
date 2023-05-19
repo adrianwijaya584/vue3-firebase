@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4">
+  <div class="p-4 min-h-screen">
     <!-- <p>{{ Fcmtoken }}</p> -->
     <img :src="notificationImage" alt="">
     <ToastProvider transition="slide-left">

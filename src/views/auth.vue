@@ -21,10 +21,9 @@
 
 <script setup lang="ts">
   import { GoogleAuthProvider, getAuth, signInWithPopup, type User, signOut, signInWithEmailLink, signInWithRedirect, signInWithCredential } from 'firebase/auth'
-  import { computed, onMounted, ref, shallowRef } from 'vue';
+  import { onMounted, ref, shallowRef } from 'vue';
   import { getCurrentUser} from 'vuefire';
-  import { googleOneTap } from 'vue3-google-login'
-import { TheCard } from 'flowbite-vue';
+  import { TheCard } from 'flowbite-vue';
 
   const provider= new GoogleAuthProvider()
   const isLogin= ref(false)
