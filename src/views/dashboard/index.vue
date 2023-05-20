@@ -7,7 +7,7 @@
 
     <form  class="space-x-3" @submit.prevent="">
       <input class="border-2" type="text" v-model="formData.name">
-      <input class="border-2" type="text" v-model="formData.age">
+      <input class="border-2" type="number" v-model.number="formData.age">
     </form>
 
     <p>Hello I'm {{ formData.name }} and I {{ formData.age }} y.o.</p>

@@ -10,7 +10,12 @@ const routes: RouteRecordRaw[]=  [
   {
     path: '/',
     name: 'home',
-    component: ()=> import("./../views/HomeView.vue")
+    component: ()=> import("@/views/HomeView.vue")
+  },
+  {
+    path: '/landing',
+    name: 'landingPage',
+    component: ()=> import("@/views/landing.vue")
   },
   {
     path: '/about',
@@ -27,11 +32,11 @@ const routes: RouteRecordRaw[]=  [
     meta: {
       needAuth: true,
     },
-    component: ()=> import("./../views/HomeView.vue")
+    component: ()=> import("@/views/HomeView.vue")
   },
   {
     path: "/dashboard",
-    component: ()=> import("./../components/dashboardLayout.vue"),
+    component: ()=> import("@/components/dashboardLayout.vue"),
     name: "DashboardLayout",
     meta: {
       needAuth: true,
@@ -39,7 +44,7 @@ const routes: RouteRecordRaw[]=  [
     children: [
       {
         path: "",
-        component: ()=> import("./../views/dashboard/index.vue")
+        component: ()=> import("@/views/dashboard/index.vue")
       }
     ]
   }

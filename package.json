@@ -19,6 +19,7 @@
     "flowbite-vue": "^0.0.10",
     "pinia": "^2.0.14",
     "postcss": "^8.4.23",
+    "sweetalert2": "^11.7.5",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2",
     "vue-tailwind": "^2.5.1",

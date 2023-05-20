@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-  import { GoogleAuthProvider, getAuth, signInWithPopup, type User, signOut, signInWithEmailLink, signInWithRedirect, signInWithCredential } from 'firebase/auth'
+  import { GoogleAuthProvider, getAuth, signInWithPopup, type User, signOut} from 'firebase/auth'
   import { onMounted, ref, shallowRef } from 'vue';
   import { getCurrentUser} from 'vuefire';
   import { TheCard } from 'flowbite-vue';
@@ -43,13 +43,12 @@
 
   async function logout() {
     try {
-      const res= await signOut(getAuth())
+      await signOut(getAuth())
 
       isLogin.value= false
       currentUser.value= undefined
     } catch (error) {
       console.log(error);
-      
     }
   }
 

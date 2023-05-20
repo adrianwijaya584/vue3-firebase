@@ -1,7 +1,7 @@
 <template>
-  <div class="p-4 min-h-screen">
+  <div class="min-h-screen">
     <!-- <p>{{ Fcmtoken }}</p> -->
-    <img :src="notificationImage" alt="">
+    <!-- <img :src="notificationImage" alt="Notification image" width="300"> -->
     <ToastProvider transition="slide-left">
       <RouterView />
     </ToastProvider>
