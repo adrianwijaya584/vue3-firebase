@@ -22,7 +22,7 @@
       </template>
     </Navbar>
 
-    <div class="min-h-screen px-5 flex flex-col space-y-5 md:px-14">
+    <main class="min-h-screen px-5 flex flex-col space-y-5 md:px-14">
       <div class="banner pt-4 flex flex-col space-y-6 md:space-y-0 md:flex-row md:h-[70vh]">
         <div class="w-full flex flex-col space-y-6 justify-center mr-14 lg:pt-10 lg:w-[45%]">
           <div class="text-2xl font-semibold flex flex-col lg:space-y-2 md:text-3xl xl:text-5xl">
@@ -50,7 +50,7 @@
         </div>
 
         <div class="w-full flex justify-center lg:w-[55%]">
-          <img src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" class="rounded-md h-full object-cover"
+          <img src="https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg" class="rounded-md h-full object-cover lazyload"
             alt="doctor image">
         </div>
       </div>
@@ -60,8 +60,7 @@
   
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque at cumque ipsa, aspernatur laboriosam sequi, eveniet beatae hic delectus esse reprehenderit quod commodi? Quia inventore harum alias optio, dicta veniam.</p>
       </div> 
-    </div>
-
+    </main>
 
     <footer class="bg-white rounded-lg shadow dark:bg-gray-900 w-full mt-10">
       <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
@@ -93,7 +92,8 @@
 </template>
 
 <script setup lang="ts">
-  import {
+  import { useHead } from '@vueuse/head';
+import {
     Navbar,
     NavbarLogo,
     NavbarCollapse,
@@ -101,6 +101,11 @@
     Button,
   } from 'flowbite-vue';
   import { onMounted, ref } from 'vue';
+
+  useHead({
+    title: 'Landing Page'
+  })
+  
 
   const year= ref(0)
 

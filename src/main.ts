@@ -5,6 +5,8 @@ import { createHead } from '@vueuse/head'
 import vue3GoogleLogin from 'vue3-google-login'
 
 import firebaseConfig from "./helpers/firebaseConfig"
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 import App from './App.vue'
 import router from './router'
